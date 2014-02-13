@@ -16,3 +16,12 @@ tmp
 .yardoc
 _yardoc
 doc/
+
+# VIM
+[._]*.s[a-w][a-z]
+[._]s[a-w][a-z]
+*.un~
+*~
+
+# OSX
+.DS_Store
