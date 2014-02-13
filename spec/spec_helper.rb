@@ -1,7 +1,5 @@
 # -*- encoding: utf-8 -*-
-
 $LOAD_PATH.unshift File.expand_path('../../lib', __FILE__)
-
 require 'qiniu-kit'
 
 RSpec.configure do |config|
@@ -12,3 +10,7 @@ RSpec.configure do |config|
     }
   end
 end
+
+
+require 'coveralls'
+Coveralls.wear!
