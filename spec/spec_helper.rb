@@ -11,8 +11,5 @@ RSpec.configure do |config|
   end
 end
 
-
-if RUBY_VERSION >= "1.9.2"
-  require 'coveralls'
-  Coveralls.wear!
-end
+require 'coveralls'
+Coveralls.wear!
