@@ -1,19 +1,26 @@
 language: ruby
 rvm:
-  - 1.8.7
-  - 1.9.2
-  - 1.9.3
-  - 2.0.0
-  - 2.1.0
-  - ruby-head
-  - jruby-18mode
-  - jruby-19mode
-  - jruby-head
-  - rbx-18mode
-  - rbx-19mode
-  - rbx-2.1.1
-  - ree
-
+- 1.8.7
+- 1.9.2
+- 1.9.3
+- 2.0.0
+- 2.1.0
+- ruby-head
+- jruby-18mode
+- jruby-19mode
+- jruby-head
+- rbx-18mode
+- rbx-19mode
+- rbx-2.1.1
+- ree
 before_script:
-  - export QINIU_ACCESS_KEY=iN7NgwM31j4-BZacMjPrOQBs34UG1maYCAQmhdCV
-  - export QINIU_SECRET_KEY=6QTOr2Jg1gcZEWDQXKOGZh5PziC2MCV5KsntT70j
+- export QINIU_ACCESS_KEY=iN7NgwM31j4-BZacMjPrOQBs34UG1maYCAQmhdCV
+- export QINIU_SECRET_KEY=6QTOr2Jg1gcZEWDQXKOGZh5PziC2MCV5KsntT70j
+deploy:
+  provider: rubygems
+  api_key:
+    secure: dFb7wl5NabGx+uhx6sph47sTVV1zdgHH+n5wsaIyLkQmGZPdgDc0Kz1Gr3XrKzUTjFeiKwRnPkamqMReweq/nkH43Z/F01dgPdgWVNekDTFEd6V06VXN00yhHeCLpQo52YdJ9f/gPsZKlCiOo+4Y3uwzClS3n8pT8kXb2M8z3ao=
+  gem: qiniu-kit
+  on:
+    tags: true
+    repo: why404/qiniu-kit
