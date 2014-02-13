@@ -21,6 +21,8 @@ Or install it yourself as:
 At a minimum, you need to configure your Qiniu account access credentials. You can supply these globally or per service object.
 
 ```ruby
+require 'qiniu-kit'
+
 # Qiniu.config is used for default configuration.
 # You can construct service object with the same options.
 Qiniu.config = {:access_key => '...', :secret_key => '...'}
