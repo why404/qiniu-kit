@@ -4,7 +4,7 @@
 [![Dependency Status](https://gemnasium.com/why404/qiniu-kit.png)](https://gemnasium.com/why404/qiniu-kit)
 [![Coverage Status](https://coveralls.io/repos/why404/qiniu-kit/badge.png)](https://coveralls.io/r/why404/qiniu-kit)
 [![Code Climate](https://codeclimate.com/github/why404/qiniu-kit.png)](https://codeclimate.com/github/why404/qiniu-kit)
-[![Gem Version](https://fury-badge.herokuapp.com/rb/qiniu-kit.png)](http://badge.fury.io/rb/qiniu-kit)
+[![Gem Version](https://badge.fury.io/rb/qiniu-kit.png)](http://badge.fury.io/rb/qiniu-kit)
 
 A collection of helpful methods for debugging Qiniu Cloud Storage API.
 
