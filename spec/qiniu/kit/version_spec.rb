@@ -2,13 +2,13 @@
 
 require 'spec_helper'
 
-describe Qiniu::Kit::VERSION do
+describe Qiniu::Kit do
 
   it 'should have a version number' do
     Qiniu::Kit::VERSION.should_not be_nil
   end
 
-  it 'should be number' do
+  it 'version should be number' do
     Qiniu::Kit::VERSION.to_s.should =~ /^\d+\.\d+\.\d+?$/
   end
 
