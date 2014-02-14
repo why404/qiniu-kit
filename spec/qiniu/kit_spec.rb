@@ -10,6 +10,20 @@ describe Qiniu::Kit do
     @encoded = 'YnVja2V0OmtleQ=='
   end
 
+  context '.decode_json' do
+    it 'should works' do
+      Qiniu::Kit.decode_json('{"abc":"def"}').should eq({"abc" => "def"})
+      Qiniu::Kit.decode_json('{"abc":"def"}', :symbolize_keys => true).should eq({:abc => "def"})
+    end
+  end
+
+  context '.encode_json' do
+    it 'should works' do
+      Qiniu::Kit.encode_json({:abc => 'def'}).should eq('{"abc":"def"}')
+      Qiniu::Kit.encode_json({:abc => 'def'}, :pretty => true).should eq("{\n  \"abc\": \"def\"\n}")
+    end
+  end
+
   context '.base64_url_encode' do
     it 'should works' do
       Qiniu::Kit.base64_url_encode("#{@bucket}:#{@key}").should eq(@encoded)

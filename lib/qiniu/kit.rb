@@ -1,6 +1,7 @@
 # -*- encoding: utf-8 -*-
 
 require "base64"
+require "multi_json"
 
 
 module Qiniu
@@ -19,6 +20,16 @@ module Qiniu
     def entry_uri_encode(bucket, key)
       entry_uri = bucket + ':' + key
       base64_url_encode(entry_uri)
+    end
+
+    def decode_json(*args)
+      MultiJson.load(*args)
+    rescue MultiJson::LoadError
+      raise Qiniu::JSONDecodeError.new("Invalid segment encoding")
+    end
+
+    def encode_json(*args)
+      MultiJson.dump(*args)
     end
 
   end
