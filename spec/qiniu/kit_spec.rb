@@ -20,7 +20,9 @@ describe Qiniu::Kit do
   context '.encode_json' do
     it 'should works' do
       Qiniu::Kit.encode_json({:abc => 'def'}).should eq('{"abc":"def"}')
-      Qiniu::Kit.encode_json({:abc => 'def'}, :pretty => true).should eq("{\n  \"abc\": \"def\"\n}")
+      if RUBY_VERSION >= "1.9"
+        Qiniu::Kit.encode_json({:abc => 'def'}, :pretty => true).should eq("{\n  \"abc\": \"def\"\n}")
+      end
     end
   end
 
