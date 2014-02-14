@@ -25,7 +25,7 @@ module Qiniu
     def decode_json(*args)
       MultiJson.load(*args)
     rescue MultiJson::LoadError
-      raise Qiniu::JSONDecodeError.new("Invalid segment encoding")
+      raise Qiniu::Errors::JSONDecodeError.new("Invalid segment encoding")
     end
 
     def encode_json(*args)
