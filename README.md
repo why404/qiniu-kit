@@ -31,14 +31,8 @@ require 'qiniu-kit'
 Qiniu::Kit.decode_json('{"abc":"def"}')
 #=> {"abc" => "def"}
 
-Qiniu::Kit.decode_json('{"abc":"def"}', :symbolize_keys => true)
-#=> {:abc => "def"}
-
 Qiniu::Kit.encode_json({:abc => 'def'})
 # convert Ruby back to JSON
-
-Qiniu::Kit.encode_json({:abc => 'def'}, :pretty => true)
-# encoded in a pretty form (if supported by the coder)
 
 
 Qiniu::Kit.base64_url_encode("bucket:key")

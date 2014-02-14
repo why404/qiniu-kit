@@ -12,17 +12,18 @@ describe Qiniu::Kit do
 
   context '.decode_json' do
     it 'should works' do
-      Qiniu::Kit.decode_json('{"abc":"def"}').should eq({"abc" => "def"})
-      Qiniu::Kit.decode_json('{"abc":"def"}', :symbolize_keys => true).should eq({:abc => "def"})
+      Qiniu::Kit.decode_json('{"deadline":0,"scope":"my_bucket"}').should eq({"deadline"=>0, "scope"=>"my_bucket"})
     end
   end
 
   context '.encode_json' do
     it 'should works' do
-      Qiniu::Kit.encode_json({:abc => 'def'}).should eq('{"abc":"def"}')
-      if RUBY_VERSION >= "1.9"
-        Qiniu::Kit.encode_json({:abc => 'def'}, :pretty => true).should eq("{\n  \"abc\": \"def\"\n}")
-      end
+      expected_result =[
+        '{"deadline":0,"scope":"my_bucket"}',
+        '{"scope":"my_bucket","deadline":0}'
+      ]
+      result = Qiniu::Kit.encode_json({"deadline"=>0, "scope"=>"my_bucket"})
+      expected_result.include?(result).should be_true
     end
   end
 

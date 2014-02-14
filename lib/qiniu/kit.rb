@@ -1,8 +1,7 @@
 # -*- encoding: utf-8 -*-
 
-require "base64"
-require "multi_json"
-
+require 'base64'
+require 'json'
 
 module Qiniu
   module Kit
@@ -22,14 +21,14 @@ module Qiniu
       base64_url_encode(entry_uri)
     end
 
-    def decode_json(*args)
-      MultiJson.load(*args)
-    rescue MultiJson::LoadError
+    def decode_json(encoded)
+      JSON.parse(encoded)
+    rescue JSON::ParserError
       raise Qiniu::Errors::JSONDecodeError.new("Invalid segment encoding")
     end
 
-    def encode_json(*args)
-      MultiJson.dump(*args)
+    def encode_json(raw)
+      JSON.generate(raw)
     end
 
   end
