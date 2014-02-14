@@ -21,24 +21,6 @@ Or install it yourself as:
 
     $ gem install qiniu-kit
 
-## Configuration
-
-At a minimum, you need to configure your Qiniu account access credentials. You can supply these globally or per service object.
-
-```ruby
-require 'qiniu-kit'
-
-# Qiniu.config is used for default configuration.
-# You can construct service object with the same options.
-Qiniu.config = {:access_key => '...', :secret_key => '...'}
-```
-
-Additionally, the gem will attempt to load these options from `ENV`:
-
-    export QINIU_ACCESS_KEY='...'
-    export QINIU_SECRET_KEY='...'
-
-
 ## Usage
 
 ```ruby
@@ -92,9 +74,25 @@ mac.sign_with_request(url, body)
 #=> "access_key:85Q_5E2cYOMeVFg1a50nW3To2n8="
 ```
 
+## Configuration
+
+You can configure your Qiniu account access credentials globally. This is very useful to setup onther Qiniu libraries, like [qiniu-policy](https://github.com/why404/qiniu-policy).
+
+```ruby
+require 'qiniu-kit'
+
+Qiniu.config = {:access_key => '...', :secret_key => '...'}
+```
+
+Additionally, the library will attempt to load these options from `ENV`:
+
+    export QINIU_ACCESS_KEY='...'
+    export QINIU_SECRET_KEY='...'
+
+
 ## TODO
 
-support http requests/responses
+- support http requests/responses
 
 ## Supported Ruby versions
 
