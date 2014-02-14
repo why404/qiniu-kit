@@ -12,8 +12,8 @@ rvm:
 - rbx
 - ree
 before_script:
-- export QINIU_ACCESS_KEY=iN7NgwM31j4-BZacMjPrOQBs34UG1maYCAQmhdCV
-- export QINIU_SECRET_KEY=6QTOr2Jg1gcZEWDQXKOGZh5PziC2MCV5KsntT70j
+- export QINIU_ACCESS_KEY=key_for_test
+- export QINIU_SECRET_KEY=secret_for_test
 deploy:
   provider: rubygems
   api_key:
